@@ -123,7 +123,7 @@ module "base2" {
   name_prefix = "suma-qam-41-"
   use_avahi   = false
   domain      = "mgr.prv.suse.net"
-  images      = [ "sles11sp4", "sles12sp4", "sles15", "centos6o", "centos7o" ]
+  images      = [ "sles11sp4", "sles12sp4", "sles15", /*"centos6o",*/ "centos7o" ]
 
   mirror = "minima-mirror-qam.mgr.prv.suse.net"
   use_mirror_images = true
@@ -344,7 +344,7 @@ module "centos7-client" {
   //ceos7-client_additional_repos
 
 }
-
+/*
 module "centos6-client" {
   providers = {
     libvirt = libvirt.caladan
@@ -366,7 +366,7 @@ module "centos6-client" {
   //ceos6-client_additional_repos
 
 }
-
+*/
 module "sles12sp4-minion" {
   providers = {
     libvirt = libvirt.caladan
@@ -512,7 +512,7 @@ module "centos7-minion" {
   //ceos7-minion_additional_repos
 
 }
-
+/*
 module "centos6-minion" {
   providers = {
     libvirt = libvirt.caladan
@@ -534,7 +534,7 @@ module "centos6-minion" {
   //ceos6_minion_additional_repos
 
 }
-
+*/
 /*
 module "ubuntu2004-minion" {
   providers = {
@@ -710,7 +710,7 @@ module "centos7-sshminion" {
   use_os_released_updates = false
   ssh_key_path = "./salt/controller/id_rsa.pub"
 }
-
+/*
 module "centos6-sshminion" {
   providers = {
     libvirt = libvirt.caladan
@@ -727,7 +727,7 @@ module "centos6-sshminion" {
   use_os_released_updates = false
   ssh_key_path = "./salt/controller/id_rsa.pub"
 }
-
+*/
 /*
 module "ubuntu2004-sshminion" {
   providers = {
@@ -801,9 +801,9 @@ module "controller" {
   server_configuration = module.server.configuration
   proxy_configuration  = module.proxy.configuration
 
-  centos6_client_configuration = module.centos6-client.configuration
-  centos6_minion_configuration = module.centos6-minion.configuration
-  centos6_sshminion_configuration = module.centos6-sshminion.configuration
+  //centos6_client_configuration = module.centos6-client.configuration
+  //centos6_minion_configuration = module.centos6-minion.configuration
+  //centos6_sshminion_configuration = module.centos6-sshminion.configuration
 
   centos7_client_configuration    = module.centos7-client.configuration
   centos7_minion_configuration    = module.centos7-minion.configuration
