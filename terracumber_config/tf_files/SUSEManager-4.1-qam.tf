@@ -149,7 +149,7 @@ module "base3" {
   name_prefix = "suma-qam-41-"
   use_avahi   = false
   domain      = "mgr.prv.suse.net"
-  images      = [ "sles15sp1", "ubuntu1604o", "ubuntu1804o", "ubuntu2004o", "centos8o" ]
+  images      = [ "sles15sp1",/* "ubuntu1604o",*/ "ubuntu1804o", "ubuntu2004o", "centos8o" ]
 
   mirror = "minima-mirror-qam.mgr.prv.suse.net"
   use_mirror_images = true
@@ -584,7 +584,7 @@ module "ubuntu1804-minion" {
   //ubuntu1804-minion_additional_repos
 
 }
-
+/*
 module "ubuntu1604-minion" {
   providers = {
     libvirt = libvirt.giediprime
@@ -606,7 +606,7 @@ module "ubuntu1604-minion" {
   //ubuntu1604-minion_additional_repos
 
 }
-
+*/
 module "sles12sp4-sshminion" {
   providers = {
     libvirt = libvirt.caladan
@@ -763,7 +763,7 @@ module "ubuntu1804-sshminion" {
   use_os_released_updates = false
   ssh_key_path       = "./salt/controller/id_rsa.pub"
 }
-
+/*
 module "ubuntu1604-sshminion" {
   providers = {
     libvirt = libvirt.giediprime
@@ -780,7 +780,7 @@ module "ubuntu1604-sshminion" {
   use_os_released_updates = false
   ssh_key_path = "./salt/controller/id_rsa.pub"
 }
-
+*/
 module "controller" {
   source             = "./modules/controller"
   base_configuration = module.base.configuration
@@ -832,8 +832,8 @@ module "controller" {
   sle15sp1_minion_configuration    = module.sles15sp1-minion.configuration
   sle15sp1_sshminion_configuration = module.sles15sp1-sshminion.configuration
 
-  ubuntu1604_minion_configuration = module.ubuntu1604-minion.configuration
-  ubuntu1604_sshminion_configuration = module.ubuntu1604-sshminion.configuration
+  //ubuntu1604_minion_configuration = module.ubuntu1604-minion.configuration
+  //ubuntu1604_sshminion_configuration = module.ubuntu1604-sshminion.configuration
 
   ubuntu1804_minion_configuration = module.ubuntu1804-minion.configuration
   ubuntu1804_sshminion_configuration = module.ubuntu1804-sshminion.configuration
