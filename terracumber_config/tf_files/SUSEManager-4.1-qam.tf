@@ -842,6 +842,7 @@ module "controller" {
 #  ubuntu2004_sshminion_configuration = module.ubuntu2004-sshminion.configuration
 }
 
+/*
 resource "null_resource" "server_extra_nfs_mounts" {
   provisioner "remote-exec" {
     inline = [
@@ -860,6 +861,7 @@ resource "null_resource" "server_extra_nfs_mounts" {
     }
   }
 }
+*/
 
 output "configuration" {
   value = {
