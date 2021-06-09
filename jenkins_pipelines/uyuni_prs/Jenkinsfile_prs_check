@@ -61,7 +61,7 @@ pipeline {
                             commands = "${gitarro_local} ${check} -c ${context} -f ${filter}"
                         }
                         PENDING = sh(
-                            script: "echo ${commands}",
+                            script: "${commands}",
                             returnStdout: true
                             ).trim()
                         echo PENDING
