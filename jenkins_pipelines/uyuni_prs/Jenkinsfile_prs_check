@@ -65,9 +65,12 @@ pipeline {
                             returnStdout: true
                             ).trim()
                         echo PENDING
-                        /* if (PENDING.contains('TESTREQUIRED=true')) {
+                         if (PENDING.contains('TESTREQUIRED=true')) {
                             PR_NUMBER = sh(script: "grep 'PR_NUMBER:' ${env.WORKSPACE}/.gitarro_vars | cut -d ':' -f2", returnStdout: true).trim()
-                            build(
+                            echo "DEBUG"
+                            echo PR_NUMBER
+
+                            /* build(
                                 job: "uyuni-prs-${context}-pipeline",
                                 parameters: [
                                              [$class: 'StringParameterValue', name: 'GITARRO_PR_NUMBER', value: params.GITARRO_PR_NUMBER], 
