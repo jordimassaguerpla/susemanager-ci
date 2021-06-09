@@ -61,11 +61,11 @@ pipeline {
                             commands = "${gitarro_local} ${check} -c ${context} -f ${filter}"
                         }
                         PENDING = sh(
-                            script: "${commands}",
+                            script: "echo ${commands}",
                             returnStdout: true
                             ).trim()
                         echo PENDING
-                        if (PENDING.contains('TESTREQUIRED=true')) {
+                        /* if (PENDING.contains('TESTREQUIRED=true')) {
                             PR_NUMBER = sh(script: "grep 'PR_NUMBER:' ${env.WORKSPACE}/.gitarro_vars | cut -d ':' -f2", returnStdout: true).trim()
                             build(
                                 job: "uyuni-prs-${context}-pipeline",
@@ -75,6 +75,7 @@ pipeline {
                                             ],
                                 wait: false
                             )                        }
+                         */
                     }
                 }
             }
