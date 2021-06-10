@@ -77,8 +77,8 @@ pipeline {
                                              [$class: 'StringParameterValue', name: 'PR_NUMBER', value: PR_NUMBER]
                                             ],
                                 wait: false
-                            )                        }
-                         */
+                            )      */
+                       }
                     }
                 }
             }
