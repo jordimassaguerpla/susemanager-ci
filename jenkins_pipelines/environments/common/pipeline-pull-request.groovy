@@ -295,6 +295,7 @@ def run(params) {
                                         reportFiles: 'cucumber_report.html',
                                         reportName: "TestSuite Report for Pull Request ${params.builder_project}:${params.pull_request_number}"]
                             )
+                            archiveArtifacts artifacts: "${resultdirbuild}/**/*"
                             junit allowEmptyResults: true, testResults: "results/${BUILD_NUMBER}/results_junit/*.xml"
                             if (params.email_to != '') {
                                 // Send email
