@@ -295,16 +295,16 @@ def run(params) {
                                         reportFiles: 'cucumber_report.html',
                                         reportName: "TestSuite Report for Pull Request ${params.builder_project}:${params.pull_request_number}"]
                             )
-                            archiveArtifacts artifacts: "${resultdirbuild}/**/*"
                             junit allowEmptyResults: true, testResults: "results/${BUILD_NUMBER}/results_junit/*.xml"
-                            if (params.email_to != '') {
-                                // Send email
-                                // TODO: We must find a way to obtain the e-mail of the PR author and set it in TF_VAR_MAIL_TO
-                                sh " export TF_VAR_MAIL_TO=${params.email_to}; ./terracumber-cli ${common_params} --logfile ${resultdirbuild}/mail.log --runstep mail"
-                            }
-                            // Clean up old results
-                            sh "./clean-old-results -r ${resultdir}"
                         }
+                        archiveArtifacts artifacts: "${resultdirbuild}/**/*"
+                        if (params.email_to != '') {
+                            // Send email
+                            // TODO: We must find a way to obtain the e-mail of the PR author and set it in TF_VAR_MAIL_TO
+                            sh " export TF_VAR_MAIL_TO=${params.email_to}; ./terracumber-cli ${common_params} --logfile ${resultdirbuild}/mail.log --runstep mail"
+                        }
+                        // Clean up old results
+                        sh "./clean-old-results -r ${resultdir}"
                         sh "exit ${error}"
                     }
                 }
