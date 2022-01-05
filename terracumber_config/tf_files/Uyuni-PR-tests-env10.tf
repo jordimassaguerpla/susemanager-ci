@@ -168,6 +168,7 @@ module "cucumber_testsuite" {
       provider_settings = {
         mac = "aa:b2:92:04:00:6d"
       }
+      additional_repos_only = true
       additional_repos = {
         pull_request_repo = var.PULL_REQUEST_REPO,
         master_repo = var.MASTER_REPO,
@@ -179,6 +180,7 @@ module "cucumber_testsuite" {
       provider_settings = {
         mac = "aa:b2:92:04:00:6e"
       }
+      additional_repos_only = true
       additional_repos = {
         pull_request_repo = var.PULL_REQUEST_REPO,
         master_repo = var.MASTER_REPO,
@@ -277,6 +279,7 @@ module "cucumber_testsuite" {
       provider_settings = {
         mac = "aa:b2:92:04:00:76"
       }
+      additional_repos_only = true
       additional_repos = {
         client_repo = var.OPENSUSE_CLIENT_REPO,
       }
@@ -292,6 +295,7 @@ module "cucumber_testsuite" {
       provider_settings = {
         mac = "aa:b2:92:04:00:77"
       }
+      additional_repos_only = true
       additional_repos = {
         client_repo = var.OPENSUSE_CLIENT_REPO,
       }
