@@ -238,7 +238,7 @@ module "cucumber_testsuite" {
         os_update = var.UPDATE_REPO,
         os_additional_repo = var.ADDITIONAL_REPO_URL,
       }
-      image = "opensuse153-ci-pr"
+      image = "opensuse154-ci-pr"
       additional_packages = [ "venv-salt-minion" ]
       install_salt_bundle = true
     }
