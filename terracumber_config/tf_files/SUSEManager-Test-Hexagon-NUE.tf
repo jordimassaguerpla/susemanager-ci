@@ -104,7 +104,7 @@ module "cucumber_testsuite" {
   cc_username = var.SCC_USER
   cc_password = var.SCC_PASSWORD
 
-  images = ["rocky8o", "opensuse154o", "opensuse155o", "ubuntu2204o", "sles15sp4o"]
+  images = ["rocky8o", "opensuse154o", "opensuse155o", "ubuntu2204o", "sles15sp4o", "slemicro55-ign"]
 
   use_avahi    = false
   name_prefix  = "suma-testhexagon-"
@@ -132,6 +132,8 @@ module "cucumber_testsuite" {
       }
     }
     server_containerized = {
+      image = "slemicro55-ign"
+
       provider_settings = {
         mac = "aa:b2:93:01:00:51"
         memory = 16384
