@@ -265,7 +265,7 @@ resource "null_resource" "cdn_workaround" {
 
 resource "null_resource" "install_uyuni_tools" {
  provisioner "remote-exec" {
-    inline = [ "zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/ContainerUtils/SLE-Micro55/systemsmanagement:Uyuni:Master:ContainerUtils.repo && transactional-update pkg install mgrctl mgradm && sudo /usr/sbin/shutdown -r 22" ]
+    inline = [ "zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/ContainerUtils/SLE-Micro55/systemsmanagement:Uyuni:Master:ContainerUtils.repo && transactional-update pkg install mgrctl mgradm podman netavark && sudo /usr/sbin/shutdown -r 22" ]
     connection {
       type     = "ssh"
       user     = "root"
