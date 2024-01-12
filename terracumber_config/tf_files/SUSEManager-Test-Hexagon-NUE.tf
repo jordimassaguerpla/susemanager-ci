@@ -140,7 +140,7 @@ module "cucumber_testsuite" {
       }
       login_timeout = 28800
       runtime = "podman"
-      container_repository = "registry.opensuse.org/systemsmanagement/uyuni/master/servercontainer/containers/uyuni"
+      container_repository = "registry.suse.de/devel/galaxy/manager/head/containers/suse/manager/5.0/server"
       //additional_repos = {
       //  Test_repo = "http://download.suse.de/ibs/Devel:/Galaxy:/Manager:/TEST:/Hexagon/SLE_15_SP4/"
       //}
