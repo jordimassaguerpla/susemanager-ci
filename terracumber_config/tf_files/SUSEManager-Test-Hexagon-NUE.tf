@@ -157,7 +157,7 @@ module "cucumber_testsuite" {
     }
 
     suse-minion = {
-      image = "opensuse155o"
+      image = "sles15sp4o"
       name = "min-suse"
       provider_settings = {
         mac = "aa:b2:93:01:00:56"
